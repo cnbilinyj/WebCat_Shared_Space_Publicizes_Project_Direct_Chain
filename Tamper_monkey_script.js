@@ -25,7 +25,7 @@
 			})());
 			return e;
 		})());
-	}, 100);
+	}, 500);
 	element = document.querySelector("a[class=\"mdui-btn mdui-btn-icon mdui-color-blue-400 mdui-ripple\"");
 	let id = window.location.search.split("?")[1].split("&")[window.location.search.split("?")[1].split("&").map(i => {
 		return i.split("=")[0].toLowerCase()
