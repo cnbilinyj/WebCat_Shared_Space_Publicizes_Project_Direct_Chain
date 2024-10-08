@@ -65,6 +65,9 @@
 						});
 						ten_grades.addEventListener("error", event => {
 							send_requests(url_n + 1);
+							element.classList.remove("mdui-color-blue-400");
+							element.classList.add("mdui-color-red-500");
+							element.children[0].innerHTML = "arrow_downward";
 						});
 						ten_grades.send();
 					}else{
@@ -75,6 +78,9 @@
 				});
 				hundred_thousand.addEventListener("error", event => {
 					send_requests(url_n + 1);
+					element.classList.remove("mdui-color-blue-400");
+					element.classList.add("mdui-color-red-500");
+					element.children[0].innerHTML = "arrow_downward";
 				});
 				hundred_thousand.send();
 			}else{
