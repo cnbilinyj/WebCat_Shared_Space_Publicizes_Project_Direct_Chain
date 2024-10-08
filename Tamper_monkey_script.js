@@ -25,8 +25,8 @@
 			})());
 			return e;
 		})());
+		element = document.querySelector("a[class=\"mdui-btn mdui-btn-icon mdui-color-blue-400 mdui-ripple\"");
 	}, 500);
-	element = document.querySelector("a[class=\"mdui-btn mdui-btn-icon mdui-color-blue-400 mdui-ripple\"");
 	let id = window.location.search.split("?")[1].split("&")[window.location.search.split("?")[1].split("&").map(i => {
 		return i.split("=")[0].toLowerCase()
 	}).indexOf("id")].split("=")[1].padStart(5, "0");
