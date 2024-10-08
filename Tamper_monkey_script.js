@@ -85,6 +85,9 @@
 		});
 		tenThousand_levels.addEventListener("error", event => {
 			send_requests(url_n + 1);
+			element.classList.remove("mdui-color-blue-400");
+			element.classList.add("mdui-color-red-500");
+			element.children[0].innerHTML = "arrow_downward";
 		});
 		tenThousand_levels.send();
 	}
