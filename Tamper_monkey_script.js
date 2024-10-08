@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name			WebCat共享空间项目直链获取与下载器	WebCat Shared Space Project Direct Link Finder and Downloader
+// @namespace		cnbilinyj-WebCat
+// @version			2024-10-05
+// @description		从外部获取WebCat共享空间项目下载链接并通过下载链接直接进行下载。	Obtain the download link for the WebCat shared space project from external sources and download it directly through the download link.
+// @author			cnbilinyj
+// @match			http://space.webcat.top/page/detail.html*
+// @icon			http://x.webcat.top/img/icon.png
+// @grant			none
+// ==/UserScript==
 (function() {
 	'use strict';
 	let id = window.location.search.split("?")[1].split("&")[window.location.search.split("?")[1].split("&").map(i => {
@@ -12,16 +22,7 @@
 	let send_requests = function send_requests (url_n){
 		let url_ = urls[url_n];
 		if (url_ === undefined) {
-			class NetworkError extends Error {
-				constructor(message) {
-					super(message);                   	// 调用父类的constructor来设置message
-					this.name = this.constructor.name;	// 设置错误的名称，默认为类名
-
-					// 确保Error对象被正确识别为Error对象（Error.captureStackTrace用于栈追踪）
-					Error.captureStackTrace(this, this.constructor);
-				}
-			}
-			throw new NetworkError("Can't do it for any domain name in cnbilinyj.github.io and jsd.cdn.zzko.cn.")
+			throw new Error("Can't do it for any domain name in cnbilinyj.github.io and jsd.cdn.zzko.cn.")
 		}
 		let tenThousand_levels = new XMLHttpRequest();
 		tenThousand_levels.open("GET", `${url_}index.json?timestamp=${new Date().getTime()}`, true);
@@ -42,7 +43,7 @@
 								setTimeout(() => {
 									element.appendChild((() => {
 										let e = document.createElement("a");
-										e.setAttribute("class", "mdui-btn mdui-btn-icon mdui-color-blue-400 mdui-ripple");
+										e.setAttribute("class", "mdui-btn mdui-btn-icon mdui-color-green-400 mdui-ripple");
 										e.href = download_url;
 										e.appendChild((() => {
 											let e = document.createElement("i");
